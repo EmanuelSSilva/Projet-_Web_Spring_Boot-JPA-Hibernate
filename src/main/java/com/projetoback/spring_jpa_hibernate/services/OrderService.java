@@ -6,21 +6,21 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.projetoback.spring_jpa_hibernate.entities.User;
-import com.projetoback.spring_jpa_hibernate.repositories.UserRepository;
+import com.projetoback.spring_jpa_hibernate.entities.Order;
+import com.projetoback.spring_jpa_hibernate.repositories.OrderRepository;
 
 @Service //tranformando em componente do Spring para injeção.
-public class UserService {
+public class OrderService {
 	
 	@Autowired
-	private UserRepository repository; // Realizando a injeção 
+	private OrderRepository repository; // Realizando a injeção 
 	
-	public List<User> findAll(){
+	public List<Order> findAll(){
 		return repository.findAll();
 	}
 	
-	public User findById(Long id) {
-		Optional<User> obj = repository.findById(id);
+	public Order findById(Long id) {
+		Optional<Order> obj = repository.findById(id);
 		return obj.get();
 	}
 
